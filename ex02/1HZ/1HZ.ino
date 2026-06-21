@@ -1,6 +1,6 @@
-// Define LED pin, ESP32 built-in LED is GPIO 2
+// 定义LED引脚，ESP32板载LED对应GPIO 2
 const int ledPin = 2;
-// Time interval for 1Hz blink: 500ms on / 500ms off
+// 1Hz闪烁时间间隔：亮500毫秒、灭500毫秒
 const unsigned long interval = 500;
 unsigned long previousTime = 0;
 bool ledState = LOW;
@@ -11,12 +11,12 @@ void setup() {
 }
 
 void loop() {
-  // Get current system running milliseconds
+  // 获取系统当前运行总毫秒数
   unsigned long currentTime = millis();
-  // Judge whether the interval time has passed
+  // 判断是否达到设定的间隔时间
   if (currentTime - previousTime >= interval) {
     previousTime = currentTime;
-    // Flip LED state
+    // 翻转LED亮灭状态
     ledState = !ledState;
     digitalWrite(ledPin, ledState);
   }
