@@ -1,10 +1,10 @@
 // ESP32板载LED引脚定义
 const int ledPin = 2;
-// SOS时序定义：短亮、长亮、字符间隔、整套循环间隔
-const unsigned long shortLight = 200;
-const unsigned long longLight = 600;
-const unsigned long gapOff = 200;
-const unsigned long cycleStop = 1500;
+// 修改后时序：延长长闪、缩短间隔，区分第一次代码
+const unsigned long shortLight = 250;
+const unsigned long longLight = 700;
+const unsigned long gapOff = 150;
+const unsigned long cycleStop = 2000;
 
 unsigned long prevTime = 0;
 bool ledState = LOW;
